@@ -53,7 +53,7 @@ landguard/
 ### 1. Cloner le dépôt
 
 ```bash
-git clone [https://github.com/votre-compte/landguard-neurosymbolic.git](https://github.com/Mr-CASH/landguard.git)
+git clone https://github.com/Mr-CASH/landguard.git
 cd landguard
 ```
 
