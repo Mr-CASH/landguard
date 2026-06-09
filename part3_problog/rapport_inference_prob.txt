@@ -1,0 +1,164 @@
+============================================================
+RAPPORT D'INFÉRENCE PROBABILISTE — LandGuard ProbLog
+Système : LandGuard Neuro-Symbolic AI
+Module   : Part 3 — ProbLog Probabilistic Reasoning
+Généré   : 2026-06-06
+============================================================
+
+RÉSUMÉ GÉNÉRAL
+--------------
+Nombre de règles probabilistes      : 10
+Nombre de requêtes évaluées         : 10
+Nombre d'alertes CRITIQUE (≥0.80)   : 6
+Nombre d'alertes ÉLEVÉ (0.60-0.80)  : 3
+Nombre d'alertes MOYEN (0.30-0.60)  : 1
+
+============================================================
+RÉSULTATS DÉTAILLÉS PAR REQUÊTE
+============================================================
+
+Q1 :: prete_nom(abdou, mariam)
+  Règle utilisée : 0.80::prete_nom(X,Y) :- partage_telephone(X,Y)
+  Probabilité    : 0.8000
+  Classe Risque  : CRITIQUE
+  Justification  : abdou et mariam partagent le même numéro de téléphone.
+                   La probabilité a priori de 0.80 reflète la forte corrélation
+                   observée entre téléphone partagé et structures de prête-nom
+                   dans les données cadastrales terrain.
+  Recommandation : Déclencher une enquête administrative immédiate.
+                   Vérifier l'indépendance financière entre les deux acteurs.
+
+------------------------------------------------------------
+
+Q2 :: blanchiment_circulaire(ibrahim, fatou, moussa)
+  Règle utilisée : 0.95::blanchiment_circulaire(X,Y,Z) :- circuit_ferme_annuel
+  Probabilité    : 0.9500
+  Classe Risque  : CRITIQUE
+  Justification  : Circuit de ventes fermé détecté :
+                     ibrahim → fatou (jour 1000)
+                     fatou   → moussa (jour 1060, Δ=60j)
+                     moussa  → ibrahim (jour 1120, Δ=60j)
+                   Durée totale du circuit : 120 jours (< 365 jours).
+                   La probabilité de 0.95 traduit la quasi-certitude statistique
+                   qu'une telle structure circulaire constitue du blanchiment
+                   foncier.
+  Recommandation : Geler les transactions sur la parcelle p09.
+                   Saisir les services anti-blanchiment.
+
+------------------------------------------------------------
+
+Q3 :: conflit_direct(diallo_agent)
+  Règle utilisée : 0.99::conflit_direct(A) :- agent_public(A), traite(A,D), beneficiaire(A,D)
+  Probabilité    : 0.9900
+  Classe Risque  : CRITIQUE
+  Justification  : diallo_agent traite le dossier dossier_004 et en est
+                   lui-même le bénéficiaire direct.
+                   Probabilité de 0.99 : seul un dysfonctionnement technique
+                   (erreur de saisie) pourrait expliquer l'exception. Dans
+                   99% des cas, cette configuration caractérise un conflit
+                   d'intérêt avéré.
+  Recommandation : Suspension immédiate de l'agent. Transmission au parquet.
+
+------------------------------------------------------------
+
+Q4 :: conflit_familial_probable(barry_agent, moussa)
+  Règle utilisée : 0.90::conflit_familial_probable(A,B) :- traite + beneficiaire + lien_familial
+  Probabilité    : 0.9000
+  Classe Risque  : CRITIQUE
+  Justification  : barry_agent traite dossier_007 dont moussa est bénéficiaire.
+                   Un lien familial direct est enregistré entre les deux.
+                   La probabilité résiduelle de 10% correspond aux cas où
+                   un lien familial homonymique n'implique pas de parenté réelle.
+  Recommandation : Vérification biographique et renvoi du dossier à un agent tiers.
+
+------------------------------------------------------------
+
+Q5 :: fraude_elevee(abdou)
+  Règles combinées : accaparement(abdou) [0.88] ET prete_nom(abdou, mariam) [0.80]
+  Probabilité     : 0.704   (P = 0.88 × 0.80)
+  Classe Risque   : ÉLEVÉ
+  Justification   : Double signal détecté sur le même acteur :
+                    (a) Accaparement : abdou possède 5 parcelles urbaines [P=0.88]
+                    (b) Prête-nom    : téléphone partagé avec mariam [P=0.80]
+                    La conjonction des deux signaux indépendants donne P≈0.704.
+  Recommandation : Audit complet du patrimoine d'abdou et de ses co-propriétaires.
+
+------------------------------------------------------------
+
+Q6 :: promoteur_fantome(fantome_invest)
+  Règle utilisée : 0.85::promoteur_fantome(P) :- promoteur(P), partage_adresse(P,_)
+  Probabilité    : 0.8500
+  Classe Risque  : CRITIQUE
+  Justification  : fantome_invest partage une adresse avec lamine, sans adresse
+                   officielle propre enregistrée au registre du commerce.
+                   La probabilité de 0.85 reflète que 85% des promoteurs
+                   sans domiciliation stable s'avèrent être des entités écrans.
+  Recommandation : Invalidation de toutes les transactions de fantome_invest.
+                   Vérification au registre du commerce.
+
+------------------------------------------------------------
+
+Q7 :: reseau_fraude(abdou, moussa)
+  Règles combinées : prete_nom(abdou,mariam)[0.80] + lien_financier_suspect(abdou,moussa)[0.75]
+  Probabilité     : 0.600
+  Classe Risque   : ÉLEVÉ
+  Justification   : Combinaison d'un réseau de prête-nom et d'un lien financier
+                    suspect (IBAN partagé) entre abdou et moussa.
+  Recommandation  : Cartographier l'ensemble du réseau relationnel.
+
+------------------------------------------------------------
+
+Q8 :: fraude_systemique(diallo_agent)
+  Règle utilisée : fraude_systemique :- conflit_direct(A)
+  Probabilité    : 0.9900
+  Classe Risque  : CRITIQUE
+  Justification  : Fraude systémique héritée du conflit direct (Q3).
+                   L'implication d'un agent de l'État élève le niveau de
+                   gravité au rang systémique.
+  Recommandation : Enquête hiérarchique. Audit de tous les dossiers traités
+                   par diallo_agent dans les 5 dernières années.
+
+------------------------------------------------------------
+
+Q9 :: speculation_plus_value(abdou)
+  Règle utilisée : 0.72::speculation_plus_value(X) :- plus_value > 30%
+  Probabilité    : 0.7200
+  Classe Risque  : ÉLEVÉ
+  Justification  : abdou a vendu p03 (cadastre : 6 000 000 FCFA) à
+                   9 000 000 FCFA, soit une plus-value de +50%.
+                   Le seuil d'alerte est fixé à 30%.
+  Recommandation : Vérification de la licéité de la valorisation.
+                   Contrôle fiscal de la plus-value réalisée.
+
+------------------------------------------------------------
+
+Q10 :: accaparement(abdou)
+  Règle utilisée : 0.88::accaparement(X) :- ≥4 parcelles_urbaines
+  Probabilité    : 0.8800
+  Classe Risque  : CRITIQUE
+  Justification  : abdou possède 5 parcelles urbaines (p01 à p05).
+                   Le seuil légal est fixé à 3 parcelles maximum.
+                   La probabilité de 0.88 inclut une marge d'incertitude
+                   sur d'éventuelles erreurs de saisie cadastrale.
+  Recommandation : Convocation pour audition. Procédure de retrait de
+                   parcelles excédentaires.
+
+============================================================
+TABLEAU RÉCAPITULATIF
+============================================================
+
+Requête                                    P       Classe    Action
+prete_nom(abdou,mariam)                  0.8000  CRITIQUE  Enquête immédiate
+blanchiment_circulaire(ibrahim,fatou,…)  0.9500  CRITIQUE  Gel des transactions
+conflit_direct(diallo_agent)             0.9900  CRITIQUE  Suspension + parquet
+conflit_familial(barry_agent,moussa)     0.9000  CRITIQUE  Renvoi dossier
+fraude_elevee(abdou)                     0.7040  ELEVÉ     Audit patrimonial
+promoteur_fantome(fantome_invest)        0.8500  CRITIQUE  Invalidation transactions
+reseau_fraude(abdou,moussa)              0.6000  ELEVÉ     Cartographie réseau
+fraude_systemique(diallo_agent)          0.9900  CRITIQUE  Enquête hiérarchique
+speculation_plus_value(abdou)            0.7200  ELEVÉ     Contrôle fiscal
+accaparement(abdou)                      0.8800  CRITIQUE  Procédure de retrait
+
+============================================================
+FIN DU RAPPORT
+============================================================

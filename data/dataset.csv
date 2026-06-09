@@ -1,0 +1,51 @@
+id,nom,type_acteur,nb_parcelles_urbaines,nb_parcelles_rurales,frequence_revente,ratio_plus_value,nb_liens_reseau,partage_telephone,partage_adresse,partage_iban,age_premier_achat_jours,est_agent_public,label,description
+1,citoyen_001,citoyen,1,0,0.0,0.05,0,0,0,0,800,0,standard,Propriétaire normal d'une parcelle urbaine
+2,citoyen_002,citoyen,0,1,0.0,0.02,1,0,0,0,600,0,standard,Propriétaire rural avec un lien familial
+3,citoyen_003,citoyen,1,1,0.1,0.08,0,0,0,0,900,0,standard,Petit propriétaire mixte sans activité suspecte
+4,citoyen_004,citoyen,0,0,0.0,0.0,2,0,0,0,1000,0,standard,Citoyen sans parcelle avec réseau social normal
+5,citoyen_005,citoyen,1,0,0.0,0.03,1,0,0,0,750,0,standard,Propriétaire unique parcelle urbaine ancienne
+6,citoyen_006,citoyen,0,1,0.05,0.0,0,0,0,0,1100,0,standard,Propriétaire rural pur sans revente
+7,citoyen_007,citoyen,1,0,0.0,0.10,1,0,0,0,850,0,standard,Légère plus-value non suspecte
+8,citoyen_008,citoyen,2,0,0.2,0.12,1,0,0,0,700,0,standard,Deux parcelles avec revente occasionnelle
+9,citoyen_009,citoyen,0,2,0.0,0.0,2,0,0,0,950,0,standard,Deux parcelles rurales famille élargie
+10,citoyen_010,citoyen,1,1,0.1,0.05,1,0,0,0,800,0,standard,Propriétaire mixte avec héritage
+11,citoyen_011,citoyen,2,1,0.15,0.08,2,0,0,0,650,0,standard,Profil normal légèrement diversifié
+12,citoyen_012,citoyen,1,0,0.0,0.0,3,0,0,0,1050,0,standard,Bien intégré socialement + pas de fraude
+13,citoyen_013,citoyen,0,1,0.0,0.02,1,0,0,0,920,0,standard,Rural simple
+14,agent_001,agent_public,1,0,0.0,0.0,1,0,0,0,800,1,standard,Agent public propriétaire standard
+15,agent_002,agent_public,0,1,0.0,0.03,1,0,0,0,750,1,standard,Agent rural sans conflit détecté
+16,promo_001,promoteur,2,0,0.1,0.05,2,0,0,0,400,0,standard,Promoteur régulier avec adresse stable
+17,citoyen_014,citoyen,1,1,0.05,0.06,0,0,0,0,880,0,standard,Propriétaire mixte tranquille
+18,citoyen_015,citoyen,1,0,0.0,0.0,0,0,0,0,1000,0,standard,Primo-accédant récent
+19,citoyen_016,citoyen,0,2,0.1,0.04,1,0,0,0,700,0,standard,Propriétaire rural élargi
+20,citoyen_017,citoyen,1,0,0.2,0.10,2,0,0,0,600,0,standard,Quelques reventes non suspectes
+21,citoyen_018,citoyen,2,0,0.1,0.05,1,0,0,0,850,0,standard,Petit propriétaire urbain
+22,citoyen_019,citoyen,0,1,0.0,0.0,3,0,0,0,1100,0,standard,Rural intégré famille nombreuse
+23,citoyen_020,citoyen,1,1,0.0,0.02,1,0,0,0,950,0,standard,Propriétaire équilibré
+24,citoyen_021,citoyen,2,0,0.25,0.18,2,0,0,0,700,0,standard,Reventes légèrement fréquentes mais légales
+25,citoyen_022,citoyen,1,0,0.1,0.0,1,0,0,0,800,0,standard,Profil classique
+26,citoyen_023,citoyen,0,1,0.0,0.0,0,0,0,0,1200,0,standard,Propriétaire héritier ancien
+27,citoyen_024,citoyen,2,1,0.15,0.09,2,0,0,0,650,0,standard,Profil actif non suspect
+28,citoyen_025,citoyen,1,0,0.0,0.03,1,0,0,0,900,0,standard,Standard pur
+29,citoyen_026,citoyen,0,2,0.05,0.0,2,0,0,0,850,0,standard,Rural diversifié
+30,citoyen_027,citoyen,1,1,0.1,0.07,1,0,0,0,750,0,standard,Propriétaire mixte actif
+31,seydou,citoyen,2,0,0.8,0.52,1,0,0,0,200,0,speculation,Revente ultra-rapide de p03 après acquisition d'abdou (30 jours)
+32,moussa_s,citoyen,4,0,0.6,0.42,3,0,1,0,300,0,speculation,4 parcelles urbaines avec reventes fréquentes et plus-values
+33,ndaye_n,citoyen,3,0,0.7,0.38,2,0,0,0,250,0,speculation,Spéculateur urbain actif
+34,thierno_t,citoyen,2,1,0.65,0.45,2,0,0,1,180,0,speculation,Reventes rapides avec IBAN partagé
+35,aminata_spec,citoyen,3,0,0.72,0.55,1,0,0,0,220,0,speculation,Spéculatrice à forte plus-value
+36,abdou,citoyen,5,0,0.6,0.50,4,1,1,1,100,0,accaparement,5 parcelles urbaines + téléphone + adresse + IBAN partagés — profil classique accapareur
+37,moussa,citoyen,4,1,0.5,0.35,5,1,0,1,120,0,accaparement,4 parcelles urbaines + IBAN commun + réseau familial étendu
+38,atlas_immo,promoteur,3,0,0.3,0.22,4,0,0,0,90,0,accaparement,Promoteur cumulant les parcelles via montages administratifs
+39,mamadou_acc,citoyen,4,2,0.2,0.15,6,0,1,1,80,0,accaparement,Accapareur rural et urbain via réseau familial
+40,lamine_acc,citoyen,5,1,0.4,0.28,5,1,1,0,110,0,accaparement,Accaparement massif avec adresse et téléphone partagés
+41,cas_limite_1,citoyen,3,0,0.4,0.32,3,1,0,0,300,0,cas_limite,3 parcelles urbaines (juste sous le seuil de 4) + téléphone partagé — borderline
+42,cas_limite_2,agent_public,2,0,0.2,0.18,3,0,0,0,400,1,cas_limite,Agent public avec 2 parcelles et liens professionnels nombreux
+43,cas_limite_3,citoyen,3,1,0.38,0.29,4,0,1,0,280,0,cas_limite,Adresse partagée mais seulement 3 parcelles urbaines
+44,cas_limite_4,promoteur,2,2,0.3,0.25,3,0,0,1,350,0,cas_limite,Promoteur avec IBAN partagé mais adresse stable
+45,cas_limite_5,citoyen,2,0,0.5,0.35,2,1,0,0,250,0,cas_limite,Revente rapide + téléphone partagé mais peu de parcelles
+46,reseau_familial,citoyen,5,2,0.7,0.60,8,1,1,1,50,0,fraude_sophistiquee,Réseau familial de prête-noms : 5 parcelles urbaines + tous indicateurs partagés + fréquence revente élevée + liens familiaux massifs
+47,conflit_indirect,agent_public,3,0,0.4,0.30,6,0,0,1,80,1,fraude_sophistiquee,Agent public avec 3 parcelles via notaire lié + IBAN partagé + bénéficiaire indirect dossier traité
+48,blanchiment_circulaire_act,citoyen,4,1,0.9,0.80,5,1,1,1,30,0,fraude_sophistiquee,Acteur central du circuit circulaire ibrahim→fatou→moussa→ibrahim : transactions bouclées en 120 jours
+49,promoteur_fantome_act,promoteur,6,0,0.8,0.70,4,0,1,1,20,0,fraude_sophistiquee,Promoteur fantôme sans adresse stable gérant 6 parcelles avec IBAN partagé et fréquence revente maximale
+50,fraude_composite_act,citoyen,5,3,0.85,0.90,9,1,1,1,15,0,fraude_sophistiquee,Fraude composite : accaparement massif + réseau prête-noms + spéculation à forte plus-value + liens financiers + âge d'acquisition très récent
